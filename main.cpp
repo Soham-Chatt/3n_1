@@ -2,7 +2,7 @@
 #include <chrono>
 
 void info() {
-    std::cout << "This program is show the Collatz conjecture." << std::endl << std::endl;
+    std::cout << "This program is to show the Collatz conjecture." << std::endl << std::endl;
 }
 
 void program() {
