@@ -5,9 +5,7 @@ void info() {
     std::cout << "This program is show the Collatz conjecture." << std::endl << std::endl;
 }
 
-int main() {
-    info();
-
+void program() {
     long long value; int count=0; bool print; double time; bool stop;
     std::cout << "Give a value: ";
     std::cin >> value;
@@ -36,5 +34,20 @@ int main() {
         count++;
     }
     std::cout << std::endl << "Sequence finished successfully in " << count << " steps." << std::endl;
+}
+
+int main() {
+    info();
+    program();
+    while (true) {
+        std::cout << "Try again (1) or exit (0)? ";
+        bool again;
+        std::cin >> again;
+        if (again) {
+            program();
+        } else {
+            break;
+        }
+    }
     return 0;
 }
