@@ -68,6 +68,7 @@ void menu(void) {
         printf("How many seconds do you want the program to run? ");
         scanf("%lf", &timeLimit);
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
+        break;
       case 4:
         printf("Exiting the program...\n");
         break;
