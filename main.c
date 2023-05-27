@@ -48,32 +48,43 @@ void menu(void) {
 
     printf("Choice: ");
     scanf("%d", &choice);
-    printf("\nGive a value: ");
-    scanf("%lld", &value);
 
     switch (choice) {
       case 1:
         printSteps = true;
+        printf("\nGive a value: ");
+        scanf("%lld", &value);
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
       case 2:
         stopAfterTime = true;
-        printf("How many seconds do you want the program to run? ");
-        scanf("%lf", &timeLimit);
+        printf("\nGive a value: ");
+        scanf("%lld", &value);
+        do {
+          printf("Give a time limit: ");
+          scanf("%lf", &timeLimit);
+          if (timeLimit <= 0) printf("Time limit must be greater than 0. Try again\n");
+        } while (timeLimit <= 0);
+
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
       case 3:
         stopAfterTime = true;
         printSteps = true;
-        printf("How many seconds do you want the program to run? ");
-        scanf("%lf", &timeLimit);
+        printf("\nGive a value: ");
+        scanf("%lld", &value);
+        do {
+          printf("Give a time limit: ");
+          scanf("%lf", &timeLimit);
+          if (timeLimit <= 0) printf("Time limit must be greater than 0. Try again\n");
+        } while (timeLimit <= 0);
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
       case 4:
         printf("Exiting the program...\n");
         break;
       default:
-        printf("Invalid choice. Try again.\n");
+        printf("Invalid choice. Try again.");
         break;
     }
   } while (choice != 4);
