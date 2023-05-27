@@ -29,7 +29,7 @@ void collatzProgram(long long value, bool printSteps, bool stopAfterTime, double
     steps++;
   }
 
-  printf("\n\nSteps taken: %d \n", steps);
+  printf("\nSteps taken: %d \n", steps);
   printf("Time elapsed: %f seconds\n", total);
 }
 
@@ -40,23 +40,29 @@ void menu(void) {
 
   do {
     bool printSteps = false, stopAfterTime = false;
-    printf("\n\nChoose an option:\n");
-    printf("1. Run with steps shown\n");
-    printf("2. Run with time limit\n");
-    printf("3. Run with steps shown and time limit\n");
-    printf("4. Exit\n");
+    printf("\nChoose an option:\n");
+    printf("1. Run\n");
+    printf("2. Run with steps shown\n");
+    printf("3. Run with time limit\n");
+    printf("4. Run with steps shown and time limit\n");
+    printf("5. Exit\n\n");
 
     printf("Choice: ");
     scanf("%d", &choice);
 
     switch (choice) {
       case 1:
-        printSteps = true;
         printf("\nGive a value: ");
         scanf("%lld", &value);
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
       case 2:
+        printSteps = true;
+        printf("\nGive a value: ");
+        scanf("%lld", &value);
+        collatzProgram(value, printSteps, stopAfterTime, timeLimit);
+        break;
+      case 3:
         stopAfterTime = true;
         printf("\nGive a value: ");
         scanf("%lld", &value);
@@ -68,7 +74,7 @@ void menu(void) {
 
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
-      case 3:
+      case 4:
         stopAfterTime = true;
         printSteps = true;
         printf("\nGive a value: ");
@@ -80,14 +86,14 @@ void menu(void) {
         } while (timeLimit <= 0);
         collatzProgram(value, printSteps, stopAfterTime, timeLimit);
         break;
-      case 4:
+      case 5:
         printf("Exiting the program...\n");
         break;
       default:
         printf("Invalid choice. Try again.");
         break;
     }
-  } while (choice != 4);
+  } while (choice != 5);
 }
 
 int main(void) {
