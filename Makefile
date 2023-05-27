@@ -1,18 +1,11 @@
-FLAGS	 = -g -c -Wall
-LFLAGS	 =
-CC = g++
-OBJS = main.o
-SOURCE = main.cpp
-OUT	= 3n1.exe
+CC = gcc
+CFLAGS = -Wall -Wextra -pedantic
+TARGET = main
 
-all: $(OBJS)
-	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+all: $(TARGET)
 
-main.o: main.cpp
-	$(CC) $(FLAGS) main.cpp
+$(TARGET): $(TARGET).o
+	$(CXX) $(CFLAGS) -o $(TARGET) $(TARGET).o
 
 clean:
-	rm -f $(OBJS) $(OUT)
-
-run: $(OUT)
-	./$(OUT)
+	rm -f $(TARGET)
