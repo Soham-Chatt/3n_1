@@ -4,8 +4,11 @@ TARGET = main
 
 all: $(TARGET)
 
+run: $(TARGET)
+	./$(TARGET)
+
 $(TARGET): $(TARGET).o
-	$(CXX) $(CFLAGS) -o $(TARGET) $(TARGET).o
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).o
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(TARGET).o
